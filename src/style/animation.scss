@@ -1,0 +1,12 @@
+.s-fade-enter-active {
+  transition: all .5s;
+}
+
+.s-fade-leave-active {
+  transition: all .5s;
+}
+
+.s-fade-enter-from,
+.s-fade-leave-to {
+  opacity: 0;
+}
