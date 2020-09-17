@@ -1,7 +1,4 @@
-.s-fade-enter-active {
-  transition: all .5s;
-}
-
+.s-fade-enter-active,
 .s-fade-leave-active {
   transition: all .5s;
 }
@@ -9,4 +6,26 @@
 .s-fade-enter-from,
 .s-fade-leave-to {
   opacity: 0;
+}
+
+.fade-up-enter-active,
+.fade-up-leave-active {
+  transition: all 1s;
+}
+
+.fade-up-enter-from,
+.fade-up-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.fade-down-enter-active,
+.fade-down-leave-active {
+  transition: all 1s;
+}
+
+.fade-down-enter-from,
+.fade-down-leave-to {
+  opacity: 0;
+  transform: translateY(-30px);
 }

@@ -3,9 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "patch": "standard-version -r patch",
+    "minor": "standard-version -r minor",
+    "major": "standard-version -r major"
   },
   "dependencies": {
+    "mapbox-gl": "^1.12.0",
     "vue": "^3.0.0-rc.11",
     "vue-router": "^4.0.0-beta.9",
     "vuex": "^4.0.0-beta.4"

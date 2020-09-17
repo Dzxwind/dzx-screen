@@ -1,10 +1,14 @@
 <template>
   <div class="map-view">
-    <div @click="back">点我回去</div>
+
   </div>
 </template>
 <script>
+import { computed } from 'vue'
 export default {
+  setup() {
+    
+  },
   data() {
     return {
 
