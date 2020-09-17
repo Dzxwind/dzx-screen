@@ -38,11 +38,14 @@ class Dot {
   }
 }
 
+
+// addCallback notify
 class ParticlateImg {
-  constructor({ img, dom }) {
+  constructor({ img, dom, flag }) {
     this.img = img
     this.width = dom.offsetWidth
     this.height = dom.offsetHeight
+    this.flag = flag
     this.initContext(dom)
     this.draw()
   }
@@ -108,7 +111,7 @@ class ParticlateImg {
       frameCount:0,
       frameNum:0
     }
-    this.dotList.forEach((item,index,arr) => {
+    this.dotList.forEach((item) => {
       frameOption.frameNum = item.frameNum;
       frameOption.frameCount = item.frameCount;
       this.ctx.fillStyle = item.color;
@@ -129,14 +132,16 @@ class ParticlateImg {
       }
       this.ctx.fill();
       this.ctx.restore();
-      if (frameOption.finishCount >= arr.length) {
-        cancelAnimationFrame(this.interval);
-        return
-      }
     })
-    this.interval = requestAnimationFrame(() => {
-      this.renderAnimateDot()
-    })
+    if (frameOption.finishCount >= this.dotList.length) {
+      cancelAnimationFrame(this.interval);
+      this.flag.value = true
+      return
+    } else {
+      this.interval = requestAnimationFrame(() => {
+        this.renderAnimateDot()
+      })
+    }
   }
   draw() {
     this.getImagePixel()
@@ -148,17 +153,14 @@ class ParticlateImg {
   dispose() {
     if (document.getElementById('particlateImg')) {
       console.log('ga');
+      this.finish = false
       cancelAnimationFrame(this.interval)
     }
   }
   suitScreen() {
     window.addEventListener('resize', throttle(() => {
-      this.canvasSize = {
-        width: window.innerWidth,
-        height: window.innerHeight
-      }
-      this.canvas.width = this.width
-      this.canvas.height = this.height
+      // this.canvas.width = this.width
+      // this.canvas.height = this.height
     }), 50)
   }
 }

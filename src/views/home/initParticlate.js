@@ -3,6 +3,7 @@ import ParticlateImg from './ParticlateImg.js'
 import targetImg from '/@img/headImg.jpg'
 export default () => {
   const ParticlateWrapper = ref(null)
+  let finishFlag = ref(false)
   const ParticlateData = reactive({
     instance: null
   })
@@ -13,14 +14,15 @@ export default () => {
       ParticlateData.instance = new ParticlateImg({
         img: logoImg,
         dom: ParticlateWrapper.value,
+        flag: finishFlag
       })
-      // ParticlateData.instance.draw()
     }
   })
   onBeforeUnmount(() => {
     ParticlateData.instance.dispose()
   })
   return {
-    ParticlateWrapper
+    ParticlateWrapper,
+    finishFlag
   }
 }
