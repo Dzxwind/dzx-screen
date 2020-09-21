@@ -1,5 +1,6 @@
 <template>
   <div class="map-view">
+    <div class="screen-title">概念 · 屏</div>
     <div id="mapView"></div>
   </div>
 </template>
@@ -34,6 +35,15 @@ export default {
 .map-view {
   width: 100%;
   height: 100%;
+  background: url('/@img/bg.png') no-repeat center center;
+  background-size: 100% 100%;
+  position: relative;
+  .screen-title {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    font-size: 36px;
+  }
   #mapView {
     width: 100%;
     height: 100%;

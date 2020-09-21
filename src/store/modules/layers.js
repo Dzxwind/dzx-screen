@@ -5,7 +5,7 @@ export default [
     source: 'polygonSource',
     paint: {
       'fill-color': '#ffffff',
-      'fill-opacity': 0.2,
+      'fill-opacity': 0.3,
       // 'fill-color': [
       //   'match',
       //   ['feature-state', 'currentState'],
@@ -18,7 +18,7 @@ export default [
       //   'highlight', 0.4,
       //   0.6
       // ],
-      'fill-outline-color': '#333333'
+      'fill-outline-color': '#999'
     },
     layout: {}
   },
@@ -28,7 +28,7 @@ export default [
     source: 'polygonSource',
     filter: ['in', 'name', ''],
     paint: {
-      'fill-color': '#00cccc',
+      'fill-color': '#00d2d3',
       'fill-opacity': 0.3,
       'fill-outline-color': '#0fe5e8'
     }
