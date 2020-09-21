@@ -1,6 +1,6 @@
 import { ref, onMounted, onBeforeUnmount, reactive } from 'vue'
 import ParticlateImg from './ParticlateImg.js'
-import targetImg from '/@img/headImg.jpg'
+import targetImg from '/@img/headImg.png'
 export default () => {
   const ParticlateWrapper = ref(null)
   let finishFlag = ref(false)
