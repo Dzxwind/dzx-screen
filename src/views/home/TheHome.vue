@@ -33,7 +33,7 @@ import { watch, computed, ref, reactive } from 'vue'
 export default {
   setup() {
     const { ParticlateWrapper,finishFlag } = initParticlate()
-    const dzxWords = '无设计,不代码'
+    const dzxWords = '无创意,不代码'
     const wordsFlag = ref(false)
     const dzxWordsArr = reactive([])
     const onButtonShow = () => {

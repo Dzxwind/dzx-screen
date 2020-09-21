@@ -1,9 +1,10 @@
 import Vuex from 'vuex'
+import map from './modules/map.js'
 
 export default Vuex.createStore({
   state() {
     return {
-      test: '1'
+      test: 'state'
     }
   },
   mutations: {
@@ -13,6 +14,6 @@ export default Vuex.createStore({
 
   },
   modules: {
-
+    map
   }
 });

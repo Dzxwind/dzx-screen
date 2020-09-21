@@ -1,3 +1,4 @@
+import '/@modules/mapbox-gl/dist/mapbox-gl.css'
 import '/@/assets/font/NotoSansCJK-Regular-1/NotoSansCJK-Regular-1.css'
 import '../style/index.scss'
 
