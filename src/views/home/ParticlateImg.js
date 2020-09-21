@@ -1,5 +1,12 @@
+/**
+ * @author Dzxwind
+ * @time 2020-09-17 16:16:48
+ * @param {pathString} img 图片路径
+ * @param {DOM} dom 需要渲染的DOM元素
+ * @param {RefBoolean} flag 响应式布尔值，代表状态
+ */
 const randomNum = (minNum,maxNum) => {
-  return Math.random()*(maxNum-minNum+1)+minNum; 
+  return Math.random() * (maxNum - minNum + 1) + minNum; 
 }
 
 // Ease-in-out动画函数
@@ -43,6 +50,7 @@ class Dot {
 class ParticlateImg {
   constructor({ img, dom, flag }) {
     this.img = img
+    this.dom = dom
     this.width = dom.offsetWidth
     this.height = dom.offsetHeight
     this.flag = flag
@@ -146,7 +154,7 @@ class ParticlateImg {
   draw() {
     this.getImagePixel()
     this.getDotList()
-    // this.renderStaticDot()
+    this.renderStaticDot()
     this.renderAnimateDot()
     this.suitScreen()
   }
@@ -159,8 +167,11 @@ class ParticlateImg {
   }
   suitScreen() {
     window.addEventListener('resize', throttle(() => {
-      // this.canvas.width = this.width
-      // this.canvas.height = this.height
+      this.width = this.dom.offsetWidth
+      this.height = this.dom.offsetHeight
+      this.canvas.width = this.width
+      this.canvas.height = this.height
+      this.renderStaticDot()
     }), 50)
   }
 }
