@@ -35,7 +35,7 @@ export default {
 .map-view {
   width: 100%;
   height: 100%;
-  background: url('/@img/bg.png') no-repeat center center;
+  background: url('../../assets/images/bg.png') no-repeat center center;
   background-size: 100% 100%;
   position: relative;
   .screen-title {
