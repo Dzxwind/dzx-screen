@@ -14,7 +14,9 @@ export default () => {
       ParticlateData.instance = new ParticlateImg({
         img: logoImg,
         dom: ParticlateWrapper.value,
-        flag: finishFlag
+        callback: () => {
+          finishFlag.value = true
+        }
       })
     }
   })

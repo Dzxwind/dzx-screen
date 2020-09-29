@@ -2,16 +2,28 @@
   <div class="map-view">
     <div class="screen-title">概念 · 屏</div>
     <div id="mapView"></div>
+    <router-view />
   </div>
 </template>
 <script>
-import { computed } from 'vue'
-import store from '/@/store/index.js'
+import mapInit from './mapInit/mapInit.js'
+import GradientSphere from './threeModle/GradientSphere.js'
+// import ModelInit from './threeModle/ModelInit'
 export default {
   setup() {
-    const testState = computed(() => store.state.map.lalala)
-    return  {
-      testState
+    const { mb } = mapInit((map) => {
+      let GradientSphereInstance = new GradientSphere({
+        id: 'GradientSphere',
+        center: [120.43644173862953, 27.774665654830912],
+        height: 0,
+        rotate: [Math.PI / 2, 0, 0],
+        scale: 2.41843220338983e-5
+      })
+      // map.addLayer(ModelInit(map))
+      map.addLayer(GradientSphereInstance.getLayerObject())
+    })
+    return {
+      mb
     }
   },
   data() {
@@ -19,15 +31,12 @@ export default {
 
     }
   },
-  mounted() {
-    this.$store.commit('mapInit')
-  },
   methods: {
     back() {
       this.$router.push({
         name: 'Home'
       })
-    }
+    },
   },
 }
 </script>

@@ -16,7 +16,6 @@
           <rect class="center-diamond" x="935" y="15" width="50" height="50"></rect>
           <rect class="center-scale-diamond" x="935" y="15" width="50" height="50"></rect>
         </g>
-        <!-- <image height='85px' width="1920px" clip-path="url(#cd-image-1)" :xlink:href="require('@/assets/title.png')"></image> -->
       </svg>
     </div>
     <transition name="fade-down" mode="out-in" @enter="onButtonShow">

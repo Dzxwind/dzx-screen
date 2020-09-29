@@ -3,7 +3,7 @@
  * @time 2020-09-17 16:16:48
  * @param {pathString} img 图片路径
  * @param {DOM} dom 需要渲染的DOM元素
- * @param {RefBoolean} flag 响应式布尔值，代表状态
+ * @param {function} callback 回调函数
  */
 const randomNum = (minNum,maxNum) => {
   return Math.random() * (maxNum - minNum + 1) + minNum; 
@@ -48,12 +48,12 @@ class Dot {
 
 // addCallback notify
 class ParticlateImg {
-  constructor({ img, dom, flag }) {
+  constructor({ img, dom, callback }) {
     this.img = img
     this.dom = dom
     this.width = dom.offsetWidth
     this.height = dom.offsetHeight
-    this.flag = flag
+    this.callback = callback
     this.initContext(dom)
     this.draw()
   }
@@ -143,7 +143,7 @@ class ParticlateImg {
     })
     if (frameOption.finishCount >= this.dotList.length) {
       cancelAnimationFrame(this.interval);
-      this.flag.value = true
+      this.callback()
       return
     } else {
       this.interval = requestAnimationFrame(() => {

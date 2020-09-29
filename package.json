@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "mapbox-gl": "^1.12.0",
+    "three": "^0.120.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-beta.11",
     "vuex": "^4.0.0-beta.4"

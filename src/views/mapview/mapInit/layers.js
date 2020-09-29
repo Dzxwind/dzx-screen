@@ -32,5 +32,13 @@ export default [
       'fill-opacity': 0.3,
       'fill-outline-color': '#0fe5e8'
     }
+  },
+  {
+    id: 'testPoint',
+    type: "symbol",
+    source: 'testSource',
+    layout: {
+      'icon-image': '/@/assets/images/headImg.png'
+    }
   }
 ]

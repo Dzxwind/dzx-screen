@@ -10,7 +10,14 @@ const routes = [
   {
     path: '/map',
     name: 'MapView',
-    component: defineAsyncComponent(() => import('/@/views/mapview/MapView.vue'))
+    component: defineAsyncComponent(() => import('/@/views/mapview/MapView.vue')),
+    children: [
+      {
+        path: 'area',
+        name: 'MapArea',
+        component: defineAsyncComponent(() => import('/@/views/mapview/area/MapArea.vue')),
+      }
+    ]
   },
 ]
 

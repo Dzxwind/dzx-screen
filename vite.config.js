@@ -9,6 +9,9 @@ module.exports = {
     '/@/': resolve('src'),
     '/@img/': resolve('src/assets/images')
   },
+  optimizeDeps: {
+    include: ['three/examples/jsm/loaders/GLTFLoader.js']
+  },
   proxy: {
     '/api': {
       target: 'http://10.10.68.185:3000',
