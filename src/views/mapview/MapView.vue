@@ -1,6 +1,5 @@
 <template>
   <div class="map-view">
-    <div class="screen-title">概念 · 屏</div>
     <div id="mapView"></div>
     <router-view />
   </div>
@@ -8,7 +7,7 @@
 <script>
 import mapInit from './mapInit/mapInit.js'
 import GradientSphere from './threeModle/GradientSphere.js'
-// import ModelInit from './threeModle/ModelInit'
+import RotatePin from './threeModle/RotatePin.js'
 export default {
   setup() {
     const { mb } = mapInit((map) => {
@@ -19,7 +18,15 @@ export default {
         rotate: [Math.PI / 2, 0, 0],
         scale: 2.41843220338983e-5
       })
-      // map.addLayer(ModelInit(map))
+      let RotatePinInstance = new RotatePin({
+        id: 'RotatePin',
+        center: [121.623001,29.865294],
+        height: 0,
+        rotate: [Math.PI / 2, 0, 0],
+        scale: 2.41843220338983e-5
+      })
+      console.log(RotatePinInstance.getLayerObject());
+      map.addLayer(RotatePinInstance.getLayerObject())
       map.addLayer(GradientSphereInstance.getLayerObject())
     })
     return {
@@ -28,7 +35,7 @@ export default {
   },
   data() {
     return {
-
+      
     }
   },
   methods: {
@@ -42,20 +49,20 @@ export default {
 </script>
 <style lang="scss" scoped>
 .map-view {
-  width: 100%;
-  height: 100%;
-  background: url('../../assets/images/bg.png') no-repeat center center;
-  background-size: 100% 100%;
-  position: relative;
-  .screen-title {
-    position: absolute;
-    top: 30px;
-    left: 40px;
-    font-size: 36px;
-  }
-  #mapView {
-    width: 100%;
-    height: 100%;
-  }
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: url("../../assets/images/bg.png") no-repeat center center;
+	background-size: 100% 100%;
+	.screen-title {
+		position: absolute;
+		left: 40px;
+		top: 30px;
+		font-size: 36px;
+	}
+	#mapView {
+		width: 100%;
+		height: 100%;
+	}
 }
 </style>

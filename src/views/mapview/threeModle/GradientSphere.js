@@ -11,7 +11,7 @@ class GradientSphere extends MapboxThree {
     this.count = 0
   }
   materialInit() {
-    this.redMaterial = new THREE.MeshBasicMaterial({ color: 0x81ecec, transparent: true, opacity: 0.5 ,side: THREE.DoubleSide})
+    this.redMaterial = new THREE.MeshBasicMaterial({ color: 0x81ecec, transparent: true, opacity: 0.2 ,side: THREE.DoubleSide})
     this.lightMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff, vertexColors: true,transparent: true, opacity: 0.3 ,side: THREE.DoubleSide })
   }
   lightInit() {
@@ -39,7 +39,7 @@ class GradientSphere extends MapboxThree {
       for (let i = 0; i < numberOfSide; i++) {
         let vertexIndex = item[faceIndices[i]]
         let point = this.lightMesh.geometry.vertices[vertexIndex]
-        item.vertexColors[i] = new THREE.Color(Math.cos((point.y / 10) + this.count / 10), 0.8 , 1)
+        item.vertexColors[i] = new THREE.Color(Math.cos((point.y / 8) + this.count / 10), 1 , point.y / 100)
       }
     })
     this.lightMesh.geometry.elementsNeedUpdate = true

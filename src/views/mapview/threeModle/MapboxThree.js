@@ -6,7 +6,6 @@ class MapboxThree {
     this.firstFlag = true
     this.options = options
     this.scene = new THREE.Scene()
-    this.lightInit()
   }
   rendererInit(map, gl) {
     this.map = map
@@ -15,11 +14,6 @@ class MapboxThree {
       context: gl
     })
     this.renderer.autoClear = false
-  }
-  lightInit() {
-    this.directionLight = new THREE.DirectionalLight(0xffffff, 100)
-    this.directionLight.position.set(0, 1000, 0)
-    this.scene.add(this.directionLight)
   }
   cameraInit(matrix) {
     const { center, height, rotate, scale } = this.options
