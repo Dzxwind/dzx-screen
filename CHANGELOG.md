@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.1](https://github.com/Dzxwind/dzx-screen/compare/v0.3.0...v0.3.1) (2020-10-20)
+
+
+### Bug Fixes
+
+* **iconfont:** 修复iconfont无法打包的问题 ([47448ec](https://github.com/Dzxwind/dzx-screen/commit/47448ec3f6df89c27d70d89c95c446c1c5e79e9f))
+
 ## [0.3.0](https://github.com/Dzxwind/dzx-screen/compare/v0.2.0...v0.3.0) (2020-10-20)
 
 

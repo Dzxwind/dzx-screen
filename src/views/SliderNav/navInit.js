@@ -1,4 +1,4 @@
-import { useRouter, useRoute } from 'vue-router'
+import { useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 
 const navInit = () => {
