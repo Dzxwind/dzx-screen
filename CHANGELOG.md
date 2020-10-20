@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/Dzxwind/dzx-screen/compare/v0.3.1...v0.3.2) (2020-10-20)
+
+
+### Bug Fixes
+
+* **iconfont:** render函数改为tempalate ([7d0c9aa](https://github.com/Dzxwind/dzx-screen/commit/7d0c9aa9e2adf69a1ebd65c897740a6aecc6f844))
+
 ### [0.3.1](https://github.com/Dzxwind/dzx-screen/compare/v0.3.0...v0.3.1) (2020-10-20)
 
 
