@@ -13,7 +13,7 @@ const mapInit = () => {
     center: [120.109726, 29.181806],
     antialias: true,
     zoom: 6,
-    // style: 'mapbox://styles/mapbox/light-v10',
+    // style: 'mapbox://styles/mapbox/navigation-guidance-night-v2',
     style: {
       version: 8,
       name: 'basicLayer',

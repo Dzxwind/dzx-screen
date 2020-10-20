@@ -32,7 +32,7 @@ import { watch, computed, ref, reactive } from 'vue'
 export default {
   setup() {
     const { ParticlateWrapper,finishFlag } = initParticlate()
-    const dzxWords = '无创意,不代码'
+    const dzxWords = '无创意 不代码'
     const wordsFlag = ref(false)
     const dzxWordsArr = reactive([])
     const onButtonShow = () => {
@@ -53,7 +53,7 @@ export default {
     }
   },
   mounted() {
-
+		
   },
   methods: {
     goRouter() {
@@ -66,93 +66,98 @@ export default {
 </script>
 <style lang="scss" scoped>
 .home {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  .particlate-img {
-    width: 100%;
-    height: 80%;
-  }
-  .expand-line {
-    width: 100%;
-    height: 80px;
-    position: relative;
-    top: -100px;
-    .path-ani {
-      width: 100%;
-      height: 100%;
-      @keyframes expand {
-        to {
-          transform: scale(192);
-        }
-      }
-      #clip-rect {
-        transform-origin: 50% 50%;
-        &.animated {
-          animation: expand 3s forwards;
-        }
-      }
-      .wing-line {
-        fill: none;
-        stroke: #333;
-        stroke-width: 2;
-        .center-diamond {
-          fill: #fff;
-          stroke: #333;
-          transform: rotate(45deg);
-          transform-origin: center center;
-        }
-        .center-scale-diamond {
-          @keyframes opacityScale {
-            0% {
-              fill: #fff;
-              stroke: #333;
-              transform: rotate(45deg) scale(0.6);
-            }
-            50% {
-              fill: #333;
-              stroke: #fff;
-              transform: rotate(45deg) scale(0.2);
-            }
-            100% {
-              fill: #fff;
-              stroke: #333;
-              transform: rotate(45deg) scale(0.6);
-            }
-          }
-          fill: #333;
-          transform: rotate(45deg) scale(1);
-          transform-origin: center center;
-          animation: opacityScale 2s infinite ease-in-out;
-        }
-      }
-    }
-  }
-  .enter-button {
-    width: max-content;
-    margin: 0 auto;
-    text-align: center;
-    border: 2px solid #333;
-    color: #333;
-    padding: 10px 60px;
-    letter-spacing: .2rem;
-    cursor: pointer;
-    transition: .5s all;
-    &:hover {
-      color: #fff;
-      background-color: #333;
-    }
-  }
-  .dzx-words {
-    position: absolute;
-    width: 600px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    top: 55%;
-    display: flex;
-    justify-content: space-around;
-    font-size: 20px;
-  }
+	position: relative;
+	width: 100%;
+	height: 100%;
+	.particlate-img {
+		width: 100%;
+		height: 80%;
+	}
+	.expand-line {
+		position: relative;
+		top: -100px;
+		width: 100%;
+		height: 80px;
+		.path-ani {
+			width: 100%;
+			height: 100%;
+			@keyframes expand {
+				to {
+					transform: scale(192);
+				}
+			}
+			#clip-rect {
+				transform-origin: 50% 50%;
+				&.animated {
+					animation: expand 3s forwards;
+				}
+			}
+			.wing-line {
+				fill: none;
+				stroke: #333;
+				stroke-width: 2;
+				.center-diamond {
+					transform: rotate(45deg);
+					transform-origin: center center;
+
+					fill: #fff;
+					stroke: #333;
+				}
+				.center-scale-diamond {
+					transform: rotate(45deg) scale(1);
+					transform-origin: center center;
+					animation: opacityScale 2s infinite ease-in-out;
+
+					fill: #333;
+					@keyframes opacityScale {
+						0% {
+							transform: rotate(45deg) scale(.6);
+
+							fill: #fff;
+							stroke: #333;
+						}
+						50% {
+							transform: rotate(45deg) scale(.2);
+
+							fill: #333;
+							stroke: #fff;
+						}
+						100% {
+							transform: rotate(45deg) scale(.6);
+
+							fill: #fff;
+							stroke: #333;
+						}
+					}
+				}
+			}
+		}
+	}
+	.enter-button {
+		margin: 0 auto;
+		padding: 10px 60px;
+		border: 2px solid #333;
+		width: max-content;
+		cursor: pointer;
+		text-align: center;
+		color: #333;
+		letter-spacing: .2rem;
+		transition: .5s all;
+		&:hover {
+			background-color: #333;
+			color: #fff;
+		}
+	}
+	.dzx-words {
+		display: flex;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 55%;
+		justify-content: space-around;
+		margin: auto;
+		width: 600px;
+		font-size: 20px;
+	}
 }
 </style>

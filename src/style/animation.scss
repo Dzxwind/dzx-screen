@@ -29,3 +29,17 @@
   opacity: 0;
   transform: translateY(-30px);
 }
+
+.slide-nav-enter-active {
+  transition: all .5s;
+}
+
+.slide-nav-leave-active {
+  transition: all .5s;
+  transform-origin: left center;
+}
+
+.slide-nav-enter-from,.slide-nav-leave-to {
+  transform: translateX(-100%);
+  opacity: 0;
+}
