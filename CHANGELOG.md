@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/Dzxwind/dzx-screen/compare/v0.3.2...v0.4.0) (2020-10-23)
+
+
+### Features
+
+* **地图:** 地图点击事件，数据预对接 ([1c3a9b8](https://github.com/Dzxwind/dzx-screen/commit/1c3a9b8785ea2e1178a1d10736e92f1a6e453dc9))
+
 ### [0.3.2](https://github.com/Dzxwind/dzx-screen/compare/v0.3.1...v0.3.2) (2020-10-20)
 
 
