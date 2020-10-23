@@ -1,6 +1,6 @@
 <template>
-  <div class="map-area">
-
+  <div class="area-detail">
+    1111
   </div>
 </template>
 <script>
@@ -19,6 +19,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.map-area {
+.area-detail {
 }
 </style>

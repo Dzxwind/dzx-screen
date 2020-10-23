@@ -1,36 +1,26 @@
 <template>
   <div class="map-view">
     <div id="mapView"></div>
+    <area-detail></area-detail>
     <router-view />
   </div>
 </template>
 <script>
 import mapInit from './mapInit/mapInit.js'
-import GradientSphere from './threeModle/GradientSphere.js'
-import RotatePin from './threeModle/RotatePin.js'
+import cityIntro from './mapInit/cityIntro.js'
+import { onMounted } from 'vue'
+import AreaDetail from './AreaDetail/AreaDetail.vue'
 export default {
+  components: {
+    AreaDetail
+  },
   setup() {
-    const { mb } = mapInit((map) => {
-      let GradientSphereInstance = new GradientSphere({
-        id: 'GradientSphere',
-        center: [120.43644173862953, 27.774665654830912],
-        height: 0,
-        rotate: [Math.PI / 2, 0, 0],
-        scale: 2.41843220338983e-5
-      })
-      let RotatePinInstance = new RotatePin({
-        id: 'RotatePin',
-        center: [121.623001,29.865294],
-        height: 0,
-        rotate: [Math.PI / 2, 0, 0],
-        scale: 2.41843220338983e-5
-      })
-      console.log(RotatePinInstance.getLayerObject());
-      map.addLayer(RotatePinInstance.getLayerObject())
-      map.addLayer(GradientSphereInstance.getLayerObject())
+    onMounted(async () => {
+      const map = await mapInit()
+      cityIntro(map)
     })
     return {
-      mb
+
     }
   },
   data() {

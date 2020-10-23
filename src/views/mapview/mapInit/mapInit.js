@@ -13,6 +13,7 @@ const mapInit = () => {
     center: [120.109726, 29.181806],
     antialias: true,
     zoom: 6,
+    doubleClickZoom: false,
     // style: 'mapbox://styles/mapbox/navigation-guidance-night-v2',
     style: {
       version: 8,
@@ -42,25 +43,24 @@ const eventInit = () => {
     mb.map.setFilter('polygonHighLight', ['in', 'name', ''])
     mb.map.setPaintProperty('polygonLayer','fill-opacity', 0.3)
   })
-  mb.map.on('click', e => {
-    console.log(e);
+}
+
+const mapReady = async () => {
+  mapInit()
+  mb.map.on('load', () => {
+    mb.complete = true
+    eventInit()
+    mb.map.flyTo({
+      pitch: 50,
+      zoom: 7.2,
+      center: [120.109726, 28.881806],
+      speed: 0.3
+    })
+    return
   })
 }
 
-export default (callback) => {
-  onMounted(() => {
-    mapInit()
-    mb.map.on('load', () => {
-      mb.complete = true
-      eventInit()
-      mb.map.flyTo({
-        pitch: 50,
-        zoom: 7.2,
-        center: [120.109726, 28.881806],
-        speed: 0.3
-      })
-      callback(mb.map)
-    })
-  })
-  return mb
+export default async () => {
+  await mapReady()
+  return mb.map
 }
