@@ -34,11 +34,14 @@ export default [
     }
   },
   {
-    id: 'testPoint',
-    type: "symbol",
-    source: 'testSource',
-    layout: {
-      'icon-image': '/@/assets/images/headImg.png'
+    id: 'polygonActive',
+    type: 'fill',
+    source: 'polygonSource',
+    filter: ['in', 'name', ''],
+    paint: {
+      'fill-color': '#fff',
+      'fill-opacity': 0.6,
+      'fill-outline-color': '#999'
     }
   }
 ]
