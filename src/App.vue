@@ -5,7 +5,7 @@
       <component :is="Component" />
     </transition>
   </router-view>
-  <slider-nav></slider-nav>
+  <slider-nav v-if="$route.name !== 'Home'"></slider-nav>
 </template>
 
 <script>
