@@ -26,7 +26,6 @@ export default {
 		const store = useStore()
 		const isMenuShow = computed(() => store.state.isMenuShow)
 		const switchMenu = (flag) => store.commit('switchMenu', flag)
-		console.log(list);
 		return {
 			list,
 			onNavItemClick,

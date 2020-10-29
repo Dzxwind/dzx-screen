@@ -10,7 +10,7 @@ module.exports = {
     '/@img/': resolve('src/assets/images')
   },
   optimizeDeps: {
-    include: ['three/examples/jsm/loaders/GLTFLoader.js', 'turf-bbox', 'mockjs', 'axios']
+    include: ['three/examples/jsm/loaders/GLTFLoader.js', 'turf-bbox', 'mockjs', 'axios', 'echarts']
   },
   proxy: {
     '/api': {

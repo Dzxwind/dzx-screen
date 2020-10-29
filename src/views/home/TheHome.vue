@@ -4,16 +4,13 @@
     <div class="expand-line">
       <svg class="path-ani">
         <defs>
-          <clipPath class="clip-circle">
-            <circle cx="50%" cy="50%" r="20"/>
-          </clipPath>
           <clipPath id="clip-rect" :class="{animated: finishFlag}">
             <rect x="955" y="35" width="10" height="10"></rect>
           </clipPath>
         </defs>
         <g class="wing-line" clip-path="url(#clip-rect)">
           <polyline points="0,40 1920,40"></polyline>
-          <rect class="center-diamond" x="935" y="15" width="50" height="50"></rect>
+          <rect class="center-diamond" x="935" y="15" width="50" height="50" transform="rotate(45, 960, 40)"></rect>
           <rect class="center-scale-diamond" x="935" y="15" width="50" height="50"></rect>
         </g>
       </svg>
@@ -97,9 +94,8 @@ export default {
 				stroke: #333;
 				stroke-width: 2;
 				.center-diamond {
-					transform: rotate(45deg);
-					transform-origin: center center;
-
+					// transform: rotateZ(-45deg);
+					// transform-origin: center center;
 					fill: #fff;
 					stroke: #333;
 				}

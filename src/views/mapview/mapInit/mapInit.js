@@ -1,12 +1,12 @@
-import { onMounted, reactive } from 'vue'
+import { onMounted, shallowReactive } from 'vue'
 import Mapbox from 'mapbox-gl'
 import layers from './layers.js'
 import sources from './sources.js'
 Mapbox.accessToken = 'pk.eyJ1IjoiZHp4d2luZCIsImEiOiJjamp2NWE0Mm0xZHZ3M3FtaG9hMnVtemRjIn0.StSHDBIPo3am8o1x9rgk9Q'
-let mb = {
+let mb = shallowReactive({
   map: null,
   complete: false
-}
+})
 const mapInit = () => {
   mb.map = new Mapbox.Map({
     container: 'mapView',
@@ -14,6 +14,12 @@ const mapInit = () => {
     antialias: true,
     zoom: 6,
     doubleClickZoom: false,
+    keyboard: false,
+    boxZoom: false,
+    dragRotate: false,
+    dragPan: false,
+    touchZoomRotate: false,
+    scrollZoom: false,
     // style: 'mapbox://styles/mapbox/navigation-guidance-night-v2',
     style: {
       version: 8,
@@ -45,10 +51,9 @@ const eventInit = () => {
   })
 }
 
-const mapReady = async () => {
+const mapReady = () => {
   mapInit()
   mb.map.on('load', () => {
-    mb.complete = true
     eventInit()
     mb.map.flyTo({
       pitch: 50,
@@ -60,7 +65,9 @@ const mapReady = async () => {
   })
 }
 
-export default async () => {
-  await mapReady()
-  return mb.map
+export default () => {
+  onMounted(() => {
+    mapReady()
+  })
+  return mb
 }

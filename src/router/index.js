@@ -32,7 +32,7 @@ const routes = [
     path: '/blog',
     name: 'Blog',
     meta: {
-      title: '博客',
+      title: '守心 · 文',
       icon: 'icon-boke'
     },
     component: defineAsyncComponent(() => import('/@/views/blog/TheBlog.vue')),
