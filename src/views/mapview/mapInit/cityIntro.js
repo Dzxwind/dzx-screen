@@ -1,8 +1,9 @@
 import RotatePin from '../threeModle/RotatePin.js'
 import bbox from 'turf-bbox'
 import { getAreaData } from '/@/api/area.js'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 export default (map, flag) => {
+  const detailData = ref(null)
   const backOriginMap = () => {
     flag.value = false
     map.map.removeLayer('RotatePin')
@@ -12,19 +13,16 @@ export default (map, flag) => {
       pitch: 50,
       zoom: 7.2,
       center: [120.109726, 28.881806],
-      speed: 0.3
+      speed: 0.5
     })
   }
   onMounted(() => {
-    console.log('2');
     map.map.on('click', 'polygonLayer', async (e) => {
-      flag.value = true
       const currentBounds = bbox(e.features[0].geometry)
-      console.log(e.features[0]);
       map.map.fitBounds([[currentBounds[0],currentBounds[1]],[currentBounds[2],[currentBounds[3]]]], {
         center: JSON.parse(e.features[0].properties.centroid),
         pitch: 40,
-        speed: 0.3,
+        speed: 0.5,
         padding: {
           top: 180,
           bottom: 180,
@@ -41,11 +39,13 @@ export default (map, flag) => {
         scale: 1.41843220338983e-5
       })
       map.map.addLayer(RotatePinInstance.getLayerObject())
-      const data = await getAreaData(e.features[0].properties.adcode)
-      console.log(data);
+      const data = await getAreaData({ code: e.features[0].properties.adcode,name: e.features[0].properties.name })
+      detailData.value = data
+      flag.value = true
     })
   })
   return {
-    backOriginMap
+    backOriginMap,
+    detailData
   }
 }

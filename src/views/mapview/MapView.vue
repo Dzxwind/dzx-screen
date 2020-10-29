@@ -7,14 +7,16 @@
       </div>
     </transition>
     <div id="mapView"></div>
-    <area-detail></area-detail>
+    <transition name="detail-show">
+      <area-detail :detail-data="detailData" v-if="isBackShow"></area-detail>
+    </transition>
     <router-view />
   </div>
 </template>
 <script>
 import mapInit from './mapInit/mapInit.js'
 import cityIntro from './mapInit/cityIntro.js'
-import { onMounted, ref, toRaw } from 'vue'
+import { ref } from 'vue'
 import AreaDetail from './AreaDetail/AreaDetail.vue'
 export default {
   components: {
@@ -23,10 +25,11 @@ export default {
   setup() {
     let isBackShow = ref(false)
     const map = mapInit()
-    const { backOriginMap } = cityIntro(map, isBackShow)
+    const { backOriginMap, detailData } = cityIntro(map, isBackShow)
     return {
       isBackShow,
-      backOriginMap
+      backOriginMap,
+      detailData,
     }
   },
   data() {

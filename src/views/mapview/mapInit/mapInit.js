@@ -14,6 +14,12 @@ const mapInit = () => {
     antialias: true,
     zoom: 6,
     doubleClickZoom: false,
+    keyboard: false,
+    boxZoom: false,
+    dragRotate: false,
+    dragPan: false,
+    touchZoomRotate: false,
+    scrollZoom: false,
     // style: 'mapbox://styles/mapbox/navigation-guidance-night-v2',
     style: {
       version: 8,

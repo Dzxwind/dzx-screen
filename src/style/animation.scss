@@ -43,3 +43,14 @@
   transform: translateX(-100%);
   opacity: 0;
 }
+
+.detail-show-enter-active,
+.detail-show-leave-active {
+  transition: all .5s;
+  transform-origin: right center;
+}
+
+.detail-show-enter-from,
+.detail-show-leave-to {
+  opacity: 0;
+}
