@@ -32,4 +32,7 @@ body {
 		font-weight: bold;
 		color: rgba(#333, .07);
 	}
+	.mapboxgl-canvas {
+		outline: none;
+	}
 }
