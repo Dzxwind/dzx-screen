@@ -67,7 +67,7 @@ export default {
   box-sizing: border-box;
   background-color: rgba(#fff, .4);
   border-radius: 20px;
-  color: #3a337b;
+  color: #2a4054;
   .area-name {
     font-size: 32px;
     margin-bottom: 10px;

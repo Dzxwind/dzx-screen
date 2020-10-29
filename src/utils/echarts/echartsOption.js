@@ -259,7 +259,6 @@ const options = {
     axisLine: {
       show: true,
       lineStyle: {
-        type: "dashed",
         color: [style.lineColor]
       }
     },
