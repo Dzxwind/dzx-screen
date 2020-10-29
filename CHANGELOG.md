@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/Dzxwind/dzx-screen/compare/v0.4.2...v0.5.0) (2020-10-29)
+
+
+### Features
+
+* **省市详情:** 新增省市详情 ([5710d20](https://github.com/Dzxwind/dzx-screen/commit/5710d208381ec1cfe90b87f0b04f0bdfa95631e2))
+
 ### [0.4.2](https://github.com/Dzxwind/dzx-screen/compare/v0.4.1...v0.4.2) (2020-10-27)
 
 ### [0.4.1](https://github.com/Dzxwind/dzx-screen/compare/v0.4.0...v0.4.1) (2020-10-26)
