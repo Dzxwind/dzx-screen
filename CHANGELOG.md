@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.1](https://github.com/Dzxwind/dzx-screen/compare/v0.5.0...v0.5.1) (2020-10-29)
+
+
+### Bug Fixes
+
+* **省市详情:** 修改图标配色 ([cb1c6b9](https://github.com/Dzxwind/dzx-screen/commit/cb1c6b9865e6f8a56472c7416d5b98b827593f6b))
+
 ## [0.5.0](https://github.com/Dzxwind/dzx-screen/compare/v0.4.2...v0.5.0) (2020-10-29)
 
 
