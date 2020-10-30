@@ -1,7 +1,7 @@
 <template>
   <div class="area-detail">
     <div class="area-name">{{detail.name}}</div>
-    <div class="area-total"><span>总人口：</span>{{detail.member}}</div>
+    <div class="area-total"><span>总人口：</span>{{totalValue}}</div>
     <div class="count-charts">
       <div class="member-charts">
         <div class="charts-title">人员类型</div>
@@ -20,7 +20,7 @@
   </div>
 </template>
 <script>
-import { toRefs, toRaw } from 'vue'
+import { toRefs, toRaw, computed } from 'vue'
 import renderOriginPie from './charts/originPie.js'
 import renderAgeBar from './charts/ageBar.js'
 import renderGdpArea from './charts/gdpArea.js'
@@ -32,28 +32,18 @@ export default {
   },
   setup(props) {
     const { detailData } = toRefs(props)
+    const totalValue = computed(() => parseFloat(detailData.value.data.member).toLocaleString())
     const chartsData = toRaw(detailData.value.data)
-    console.log(chartsData);
     const { originPie } = renderOriginPie(chartsData.memberForm)
     const { ageBar } = renderAgeBar(chartsData.ageDivide)
     const { gdpArea } = renderGdpArea(chartsData.gdp)
     return {
       detail: detailData.value.data,
+      totalValue,
       originPie,
       ageBar,
       gdpArea
     }
-  },
-  data() {
-    return {
-
-    }
-  },
-  mounted() {
-
-  },
-  methods: {
-
   },
 }
 </script>

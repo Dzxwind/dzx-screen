@@ -32,18 +32,7 @@ export default {
 			isMenuShow,
 			switchMenu
 		}
-	},
-  data() {
-    return {
-			
-    }
-  },
-  mounted() {
-
-  },
-  methods: {
-
-  },
+	}
 }
 </script>
 <style lang="scss" scoped>
