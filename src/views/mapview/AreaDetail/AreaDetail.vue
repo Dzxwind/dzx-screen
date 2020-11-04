@@ -1,7 +1,7 @@
 <template>
   <div class="area-detail">
     <div class="area-name">{{detail.name}}</div>
-    <div class="area-total"><span>总人口：</span>{{totalValue}}</div>
+    <div class="area-total">总人口：<span>{{totalValue}}</span></div>
     <div class="count-charts">
       <div class="member-charts">
         <div class="charts-title">人员类型</div>
@@ -63,12 +63,13 @@ export default {
     margin-bottom: 10px;
   }
   .area-total {
-    font-size: 40px;
     position: absolute;
     right: 20px;
     top: 20px;
+    font-size: 20px;
     span {
-      font-size: 20px;
+      font-size: 40px;
+      font-family: "LED";
     }
   }
   .count-charts {
