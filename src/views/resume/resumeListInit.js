@@ -3,7 +3,7 @@ export default () => {
   const resumeList = reactive([
     {
       name: '下载',
-      url: '/@/assets/resume.pdf',
+      url: '/resume.pdf',
       icon: 'icon-download'
     }
   ])
