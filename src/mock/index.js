@@ -13,4 +13,14 @@ export default () => {
       }
     }
   })
+  Mock.mock('/overview', 'post', () => {
+    return {
+      code: 200,
+      data: Mock.mock({
+        'member|1000000-8000000': 1,
+        'gdp|100000000-800000000': 1,
+        'age|0-20.1-10': 1,
+      })
+    }
+  })
 }

@@ -1,6 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import { defineAsyncComponent } from 'vue'
-import { useStore } from 'vuex'
 
 const routes = [
   {
@@ -20,13 +19,6 @@ const routes = [
       title: '概念 · 屏',
       icon: 'icon-daping'
     },
-    // children: [
-    //   {
-    //     path: 'area',
-    //     name: 'MapArea',
-    //     component: defineAsyncComponent(() => import('/@/views/mapview/area/MapArea.vue')),
-    //   }
-    // ]
   },
   {
     path: '/blog',
@@ -36,7 +28,16 @@ const routes = [
       icon: 'icon-boke'
     },
     component: defineAsyncComponent(() => import('/@/views/blog/TheBlog.vue')),
-  }
+  },
+  {
+    path: '/resume',
+    name: 'Resume',
+    meta: {
+      title: '从简 · 历',
+      icon: 'icon-jianli'
+    },
+    component: defineAsyncComponent(() => import('/@/views/resume/TheResume.vue')),
+  },
 ]
 
 const router = createRouter({
