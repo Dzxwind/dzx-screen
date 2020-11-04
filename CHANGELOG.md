@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/Dzxwind/dzx-screen/compare/v0.5.1...v0.6.0) (2020-11-04)
+
+
+### Features
+
+* **博客:** 博客页面样式完成 ([5ebfc2d](https://github.com/Dzxwind/dzx-screen/commit/5ebfc2d8b5a5a45bb4872817f6be4a61818dfc4d))
+* **地图总览:** 新增地图总览指标板 ([1fe5d2e](https://github.com/Dzxwind/dzx-screen/commit/1fe5d2ec70b9e7f79757537b4073eaa6cc0f380b))
+
 ### [0.5.1](https://github.com/Dzxwind/dzx-screen/compare/v0.5.0...v0.5.1) (2020-10-29)
 
 
