@@ -21,22 +21,10 @@ export default {
       onBlogClick
     }
   },
-  data() {
-    return {
-      
-    }
-  },
-  mounted() {
-
-  },
-  methods: {
-
-  },
 }
 </script>
 <style lang="scss">
 .the-blog {
-	overflow-y: auto;
 	position: relative;
 	box-sizing: border-box;
 	padding-top: 140px;
@@ -44,7 +32,7 @@ export default {
   padding-bottom: 140px;
 	width: 100%;
 	height: 100%;
-	background: url("../../assets/images/blog2.jpg") no-repeat center center;
+	background: url("../../assets/images/blog.jpg") no-repeat center center;
 	background-color: #f0f2f5;
 	background-size: 100% 100%;
 	background-blend-mode: screen;

@@ -28,7 +28,16 @@ const routes = [
       icon: 'icon-boke'
     },
     component: defineAsyncComponent(() => import('/@/views/blog/TheBlog.vue')),
-  }
+  },
+  {
+    path: '/resume',
+    name: 'Resume',
+    meta: {
+      title: '从简 · 历',
+      icon: 'icon-jianli'
+    },
+    component: defineAsyncComponent(() => import('/@/views/resume/TheResume.vue')),
+  },
 ]
 
 const router = createRouter({
