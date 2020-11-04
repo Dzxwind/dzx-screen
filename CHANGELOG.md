@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.2](https://github.com/Dzxwind/dzx-screen/compare/v0.7.1...v0.7.2) (2020-11-04)
+
+
+### Bug Fixes
+
+* **下载地址:** 文件位置更换 ([bd4b74e](https://github.com/Dzxwind/dzx-screen/commit/bd4b74e6e668b80a9c11c44794cbb46222c5e67e))
+
 ### [0.7.1](https://github.com/Dzxwind/dzx-screen/compare/v0.7.0...v0.7.1) (2020-11-04)
 
 
